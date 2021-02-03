@@ -7,8 +7,8 @@ const Setting = {
 };
 
 ReactDOM.render(
-  <App
-    errorsCount={Setting.ERRORS_COUNT}
-  />,
-  document.querySelector(`#root`)
+    <App
+      errorsCount={Setting.ERRORS_COUNT}
+    />,
+    document.querySelector(`#root`)
 );

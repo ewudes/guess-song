@@ -3,7 +3,7 @@ env:
   browser: true
   commonjs: true
 
-extends: ['htmlacademy/es6', 'plugin:react/recomended']
+extends: ['htmlacademy/es6', 'plugin:react/recommended']
 
 parserOptions:
   ecmaFeatures:
@@ -13,6 +13,6 @@ parserOptions:
 
 plugins: ['react']
 
-setting:
+settings:
   react:
     version: '16'
