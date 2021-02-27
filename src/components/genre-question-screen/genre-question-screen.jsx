@@ -5,7 +5,7 @@ import {GameType} from '../../const';
 
 const GenreQuestionScreen = (props) => {
   const [userAnswers, setUserAnswers] = useState([false, false, false, false]);
-  const {question} = props;
+  const {onAnswer, question} = props;
   const {answers, genre} = question;
   return (
     <section className="game game--genre">
@@ -29,7 +29,13 @@ const GenreQuestionScreen = (props) => {
 
       <section className="game__screen">
         <h2 className="game__title">Выберите {genre}</h2>
-        <form className="game__tracks">
+        <form
+          className="game__tracks"
+          onSubmit={(env) => {
+            env.preventDefault();
+            onAnswer(question, userAnswers);
+          }}
+        >
           {answers.map((answer, id) => (
             <div key={`${id}-${answer.src}`} className="track">
               <button className="track__button track__button--play" type="button"/>
@@ -59,6 +65,7 @@ const GenreQuestionScreen = (props) => {
 };
 
 GenreQuestionScreen.propTypes = {
+  onAnswer: PropTypes.func.isRequired,
   question: PropTypes.shape({
     answers: PropTypes.arrayOf(PropTypes.shape({
       src: PropTypes.string.isRequired,
