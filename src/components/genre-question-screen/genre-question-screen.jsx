@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {GameType} from '../../const';
+import genreQuestionProp from './genre-question.prop';
 
 const GenreQuestionScreen = (props) => {
   const [userAnswers, setUserAnswers] = useState([false, false, false, false]);
-  const {onAnswer, question} = props;
+  const {onAnswer, question, renderPlayer} = props;
   const {answers, genre} = question;
   return (
     <section className="game game--genre">
@@ -38,12 +38,7 @@ const GenreQuestionScreen = (props) => {
         >
           {answers.map((answer, id) => (
             <div key={`${id}-${answer.src}`} className="track">
-              <button className="track__button track__button--play" type="button"/>
-              <div className="track__status">
-                <audio
-                  src={answer.src}
-                />
-              </div>
+              {renderPlayer(answer.src, id)}
               <div className="game__answer">
                 <input className="game__input visually-hidden" type="checkbox" name="answer" value={`answer-${id}`}
                   id={`answer-${id}`}
@@ -66,14 +61,8 @@ const GenreQuestionScreen = (props) => {
 
 GenreQuestionScreen.propTypes = {
   onAnswer: PropTypes.func.isRequired,
-  question: PropTypes.shape({
-    answers: PropTypes.arrayOf(PropTypes.shape({
-      src: PropTypes.string.isRequired,
-      genre: PropTypes.string.isRequired,
-    })).isRequired,
-    genre: PropTypes.string.isRequired,
-    type: PropTypes.oneOf([GameType.ARTIST, GameType.GENRE]).isRequired,
-  }).isRequired,
+  question: genreQuestionProp,
+  renderPlayer: PropTypes.func.isRequired,
 };
 
 export default GenreQuestionScreen;
