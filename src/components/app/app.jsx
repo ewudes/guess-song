@@ -9,6 +9,8 @@ import NotFoundScreen from '../not-found-screen/not-found-screen';
 import GameScreen from '../game-screen/game-screen';
 import artistQuestionProp from '../artist-question-screen/artist-question.prop';
 import genreQuestionProp from '../genre-question-screen/genre-question.prop';
+import Map from '../map/map';
+import {city, points} from '../../const';
 
 const App = (props) => {
   const {errorsCount, questions} = props;
@@ -29,6 +31,12 @@ const App = (props) => {
         </Route>
         <Route exact path="/lose">
           <GameOverScreen />
+        </Route>
+        <Route exact path="/map">
+          <Map
+            city={city}
+            points={points}
+          />
         </Route>
         <Route exact path="/game">
           <GameScreen
