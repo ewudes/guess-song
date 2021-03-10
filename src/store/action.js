@@ -4,7 +4,7 @@ export const ActionType = {
   RESET_GAME: `game/reset`,
 };
 
-export const ActionCreate = {
+export const ActionCreator = {
   incrementStep: () => ({
     type: ActionType.INCREMENT_STEP,
     payload: 1,
