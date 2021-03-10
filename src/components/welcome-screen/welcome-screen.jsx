@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {useHistory} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {ActionCreator} from '../../store/action';
 
 const WelcomeScreen = (props) => {
-  const {errorsCount} = props;
+  const {errorsCount, resetGame} = props;
 
   const history = useHistory();
 
@@ -14,7 +16,10 @@ const WelcomeScreen = (props) => {
       </div>
       <button
         className="welcome__button"
-        onClick={() => history.push(`/game`)}
+        onClick={() => {
+          resetGame();
+          history.push(`/game`);
+        }}
       >
         <span className="visually-hidden">
           Начать игру
@@ -33,6 +38,14 @@ const WelcomeScreen = (props) => {
 
 WelcomeScreen.propTypes = {
   errorsCount: PropTypes.number.isRequired,
+  resetGame: PropTypes.func.isRequired
 };
 
-export default WelcomeScreen;
+const mapDispatchToProps = (dispatch) => ({
+  resetGame() {
+    dispatch(ActionCreator.resetGame());
+  },
+});
+
+export {WelcomeScreen};
+export default connect(null, mapDispatchToProps)(WelcomeScreen);
