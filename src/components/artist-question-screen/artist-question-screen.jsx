@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import artistQuestionProp from './artist-question.prop';
 
 const ArtistQuestionScreen = (props) => {
-  const {onAnswer, question, renderPlayer, childern} = props;
+  const {onAnswer, question, renderPlayer, children} = props;
   const {answers, song} = question;
 
   return (
@@ -20,7 +20,7 @@ const ArtistQuestionScreen = (props) => {
             style={{filter: `url(#blur)`, transform: `rotate(-90deg) scaleY(-1)`, transformOrigin: `center`}}/>
         </svg>
 
-        {childern}
+        {children}
       </header>
 
       <section className="game__screen">
@@ -61,7 +61,7 @@ ArtistQuestionScreen.propTypes = {
   onAnswer: PropTypes.func.isRequired,
   question: artistQuestionProp,
   renderPlayer: PropTypes.func.isRequired,
-  childern: PropTypes.element.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 export default ArtistQuestionScreen;
