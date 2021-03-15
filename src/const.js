@@ -6,6 +6,11 @@ export const GameType = {
   GENRE: `genre`,
 };
 
+export const AuthorizationStatus = {
+  AUTH: `AUTH`,
+  NO_AUTH: `NO_AUTH`,
+};
+
 export const city = {
   lat: 40.835292,
   lng: -73.916236,
