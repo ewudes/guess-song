@@ -25,14 +25,26 @@ const App = () => {
         <Route exact path="/login">
           <AuthScreen />
         </Route>
-        <PrivateRoute exact
+        <PrivateRoute
+          exact
           path="/result"
-          render={() => <WinScreen />}
-        >
-        </PrivateRoute>
-        <Route exact path="/lose">
-          <GameOverScreen />
-        </Route>
+          render={({history}) => {
+            return (
+              <WinScreen
+                onReplayButtonClick={() => history.push(`/game`)}
+              />
+            );
+          }}
+        />
+        <Route
+          exact
+          path="/lose"
+          render={({history}) => (
+            <GameOverScreen
+              onReplayButtonClick={() => history.push(`/game`)}
+            />
+          )}
+        />
         <Route exact path="/map">
           <Map
             city={city}
@@ -40,9 +52,7 @@ const App = () => {
           />
         </Route>
         <Route exact path="/game">
-          <GameScreen
-            errorsCount={MAX_MISTAKE_COUNT}
-          />
+          <GameScreen />
         </Route>
         <Route>
           <NotFoundScreen />
