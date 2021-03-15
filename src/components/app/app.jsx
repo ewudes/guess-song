@@ -6,6 +6,7 @@ import GameOverScreen from '../game-over-screen/game-over-screen';
 import WinScreen from '../win-screen/win-screen';
 import NotFoundScreen from '../not-found-screen/not-found-screen';
 import GameScreen from '../game-screen/game-screen';
+import PrivateRoute from '../private-route/private-route';
 import Map from '../map/map';
 import {city, points} from '../../const';
 import {MAX_MISTAKE_COUNT} from '../../const';
@@ -23,9 +24,11 @@ const App = () => {
         <Route exact path="/login">
           <AuthScreen />
         </Route>
-        <Route exact path="/result">
-          <WinScreen />
-        </Route>
+        <PrivateRoute exact
+          path="/result"
+          render={() => <WinScreen />}
+        >
+        </PrivateRoute>
         <Route exact path="/lose">
           <GameOverScreen />
         </Route>
