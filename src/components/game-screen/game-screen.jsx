@@ -10,7 +10,7 @@ import artistQuestionProp from '../artist-question-screen/artist-question.prop';
 import genreQuestionProp from '../genre-question-screen/genre-question.prop';
 import Mistakes from '../mistakes/mistakes';
 import LoadingScreen from '../loading-screen/loading-screen';
-import {fetchQuestionList} from "../../store/api-actions";
+import {fetchQuestionList} from '../../store/api-actions';
 
 import withAudioPlayer from '../../hocs/with-audio-player/with-audio-player';
 
