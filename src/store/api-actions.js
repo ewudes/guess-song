@@ -1,5 +1,5 @@
-import {ActionCreator} from "./action";
-import {AuthorizationStatus, AppRoute, APIRoute} from "../const";
+import {ActionCreator} from './action';
+import {AuthorizationStatus, AppRoute, APIRoute} from '../const';
 
 export const fetchQuestionList = () => (dispatch, _getState, api) => (
   api.get(APIRoute.QUESTIONS)
