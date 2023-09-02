@@ -1,11 +1,32 @@
 {
-  "name": "guess-melody-6",
+  "name": "guess-melody",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server",
     "eslint": "eslint --ext .jsx --ext .js src/",
     "test": "npm run eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ewudes/ha-guessMelody.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ewudes/ha-guessMelody/issues"
+  },
+  "homepage": "https://github.com/ewudes/ha-guessMelody#readme",
+  "dependencies": {
+    "axios": "0.21.1",
+    "history": "4.10.1",
+    "leaflet": "1.7.1",
+    "prop-types": "15.7.2",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "react-redux": "7.2.2",
+    "react-router-dom": "5.2.0",
+    "redux": "4.0.5",
+    "redux-devtools-extension": "2.13.8",
+    "redux-thunk": "2.3.0"
   },
   "devDependencies": {
     "@babel/core": "7.12.13",
@@ -24,18 +45,5 @@
   },
   "engines": {
     "node": ">=12.0.0"
-  },
-  "dependencies": {
-    "axios": "0.21.1",
-    "history": "4.10.1",
-    "leaflet": "1.7.1",
-    "prop-types": "15.7.2",
-    "react": "16.14.0",
-    "react-dom": "16.14.0",
-    "react-redux": "7.2.2",
-    "react-router-dom": "5.2.0",
-    "redux": "4.0.5",
-    "redux-devtools-extension": "2.13.8",
-    "redux-thunk": "2.3.0"
   }
 }
