@@ -42,7 +42,7 @@ const GameScreen = (props) => {
   if (step >= questions.length || !question) {
     return (
       <Redirect to={AppRoute.RESULT} />
-    );
+    ); 
   }
 
   switch (question.type) {
