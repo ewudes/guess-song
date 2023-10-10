@@ -1,5 +1,5 @@
 {
-  "name": "guess-melody",
+  "name": "guess-song",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --mode production",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ewudes/ha-guessMelody.git"
+    "url": "git+https://github.com/ewudes/guess-song.git"
   },
   "bugs": {
-    "url": "https://github.com/ewudes/ha-guessMelody/issues"
+    "url": "https://github.com/ewudes/guess-song/issues"
   },
-  "homepage": "https://github.com/ewudes/ha-guessMelody#readme",
+  "homepage": "https://github.com/ewudes/guess-song#readme",
   "dependencies": {
     "axios": "0.21.1",
     "history": "4.10.1",
