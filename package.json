@@ -1,5 +1,5 @@
 {
-  "name": "guess-song",
+  "name": "guess-song-quiz",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --mode production",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ewudes/guess-song.git"
+    "url": "git+https://github.com/ewudes/guess-song-quiz.git"
   },
   "bugs": {
-    "url": "https://github.com/ewudes/guess-song/issues"
+    "url": "https://github.com/ewudes/guess-song-quiz/issues"
   },
-  "homepage": "https://github.com/ewudes/guess-song#readme",
+  "homepage": "https://github.com/ewudes/guess-song-quiz#readme",
   "dependencies": {
     "axios": "0.21.1",
     "history": "4.10.1",
